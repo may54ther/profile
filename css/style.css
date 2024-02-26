@@ -1,0 +1,107 @@
+@keyframes gradient { 
+ 0% { background-position: 50% 50%; } 
+ 100% { background-position: 100% 100%; } 
+ }
+
+/* COMMON ------------------------------------------------------------------------ */
+html { font-family: "Poppins", sans-serif; font-size: 16px; } 
+
+
+.blind { overflow: hidden; z-index: -1; opacity: 0; position: absolute; width: 0; height: 0; font-size: 0; } 
+.clearfix:after { clear: both; display: block; content: '' } 
+
+.inner { position: relative; width: 100%; min-width: 300px; max-width: 1440px; margin: 0 auto } 
+.content { width: 100%; } 
+.section { height: auto; padding: 1.625rem 2.25rem; border-radius: 0.75rem; background-color: #fff; transition: .5s ease; } 
+.section:hover { box-shadow: #2b2b2b 5px 5px 10px 0px; transform: translate(-5px, -5px); } 
+.section h2 { padding-bottom: 2rem; font-size: 1.75rem; } 
+
+.txt { color: #fff; font-weight: 700; } 
+
+.ico { position: relative; padding-left: 42px; } 
+.ico::before { display: block; position: absolute; top: 0; left: 0; width: 32px; height: 32px; background-repeat: no-repeat; background-position: center; background-size: 90% auto; content: '' } 
+.ico_mail::before { background-image: url(../images/ico_email.png); } 
+.ico_github::before { background-image: url(../images/ico_github.png); } 
+.ico_codepen::before { background-image: url(../images/ico_codepen.png); } 
+.ico_velog::before { background-image: url(../images/ico_velog.png); } 
+
+/* LAYOUT COMMON ----------------------------------------------------------------- */
+#wrap { background-color: #120720; } 
+#header, #container, #footer { position: relative; width: 100%; } 
+
+/* header */
+#header { height: 6.25rem; padding: 1.625rem 0 } 
+#header .inner { display: flex; justify-content: space-between; height: 100%; } 
+#header .header-title a { color: #fff } 
+#header .header-btn { z-index: 999; position: fixed; top: 1.625rem; right: 1.625rem; } 
+.header-btn .line { display: block; width: 40px; height: 2px; margin: 8px auto; background-color: #fff;     box-shadow: #3a3a3ac7 1px 1px 2px 0px; transition: all 0.3s ease-in-out; } 
+#header.active .header-btn .line { background-color: #000; } 
+#header.active .line:nth-child(2) { opacity: 0; } 
+#header.active .line:nth-child(1) { transform: translateY(10px) rotate(45deg); } 
+#header.active .line:nth-child(3) { transform: translateY(-10px) rotate(-45deg); } 
+#header .header-navigation { display: none; z-index: 100; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #fff; transition: background .3s; } 
+.header-navigation ul { position: absolute; top: 50%; left: 50%; width: 50%; margin-top: -19.375rem; margin-left: -25%; text-align: center; line-height: 2.5em; } 
+.header-navigation ul a { display:block; color: #000; font-size: 2.5rem; font-weight: 700; } 
+.header-navigation li { padding: 2rem 0 } 
+.header-navigation li:hover a { color:#61ffd2 } 
+#header.active .header-navigation { display: block; } 
+/* container */
+#container { position: relative; width: 100%; margin: 0 auto; } 
+/* footer */
+#footer { background: #111; } 
+#footer p { color: #eee; font-size: 1.2rem; line-height: 4rem; text-align: center; } 
+
+/* CONTENT ------------------------------------------------------------------------ */
+.main-content .main-txt { display: flex; position: relative; flex-direction: column; flex-wrap: wrap; justify-content: flex-end; height: 300px;} 
+.main-content .title { font-size: 3rem } 
+.main-content .name { font-size: 4rem; } 
+.main-content .year { position: relative; font-size: 8rem; text-align:right; background: linear-gradient(90deg, #f8f388, #61FFD2, #005576); background-clip: text; background-size: 200% 200%; animation: gradient 4s ease infinite; -webkit-text-fill-color: transparent; } 
+.main-content .main-visual { height: 26.9375rem; border-radius: 0.75rem; background-image: url('../images/bg_visual.jpg'); background-size: cover; } 
+.welcome-content { width: 100%; padding-bottom: 3rem; background: linear-gradient(#120720 0%, #123E61 100%); } 
+.welcome-content .flex-section { display: flex; position: relative; flex-wrap: wrap; justify-content: space-between; padding-top: 6.25rem; } 
+.welcome-content .welcome { position: relative; width: 100%; margin-bottom: 1rem; font-size: 3rem; text-align: left } 
+.welcome-content .welcome .ico_heartface { display: inline-block; width: 40px; height: 40px; background: url('../images/img_heart-face.png') no-repeat; background-size: 100% auto; } 
+
+/* about */
+.section-about { width: 59%; } 
+.section-about .about-box { display: flex; justify-content: space-around } 
+.about-box .left { width: 11.25rem } 
+.about-box .left img { width: 100%; } 
+.about-box .right { width: 65%; } 
+.about-box .txt{color:#000;}
+.about-box .name{font-size: 2rem;}
+.about-box .birth{font-size: 1.5rem;    font-weight: 500;}
+/* work */
+.section-work { order: 1; width: 100%; margin-top: 1% } 
+.section-work .work-swiper { position: relative; margin-left: 5%; } 
+.work-swiper .swiper::after { display: block; z-index: 10; position: absolute; top: 0; right: 0; width: 2rem; height: 100%; background: linear-gradient(270deg, white, transparent); content: ''; } 
+.work-swiper .swiper { padding-top: 0.625rem; padding-left: 1.25rem; } 
+.work-swiper .swiper-slide { width: 23.5rem; transition: all ease-out .15s; } 
+.work-swiper .swiper-slide:hover { transform: translate(-3px, -3px); } 
+.work-swiper .thumbnail { height: 13.5rem; border: 1px solid #ddd; border-radius: 0.375rem; background-color: #f4f4f4; } 
+.work-swiper .description { margin-top: 1rem; letter-spacing: -.5px; } 
+.work-swiper .description dt { font-size: 1.25rem; font-weight: 500; } 
+.work-swiper .description dd { overflow: hidden; width: 100%; color: #666; font-size: 1rem; text-overflow: ellipsis; } 
+
+/* contact */
+.section-contact { width: 40%; } 
+.section-contact li { height: 32px; line-height:32px; margin-bottom: 1.25rem } 
+.section-contact li:hover { opacity: .8; } 
+.section-contact .contact-box a { color: #000; font-size: 1.25rem; letter-spacing: -.5px; } 
+
+/* MEMDIA QUERIES ------------------------------------------------------------------------ */
+@media screen and (max-width: 1440px) { 
+    html { font-size: 14px } 
+    .inner { width: 96% } 
+    .welcome-content .section { margin: .5% auto; } 
+    .section-about, .section-work, .section-contact { order: 0; width: 100% } 
+ }
+@media screen and (max-width: 720px) { 
+    html { font-size: 12px } 
+    .main-content .main-txt{flex-direction: column-reverse;}
+    .main-content .year{text-align: left;}
+    .section-about .about-box { display: block; } 
+    .about-box .left { width:18.75rem } 
+    .about-box .left img { width: 50%; margin: 0 auto; } 
+    .about-box .right { width: 100%; } 
+ }
